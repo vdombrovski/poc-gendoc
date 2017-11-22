@@ -1,0 +1,15 @@
+Documentation
+===
+
+{% for f in doc %}
+{{f.file}}
+---
+
+{% for func in f.doc %}
+#### {{func.fn}}
+{% for p,v  in func.params.iteritems() %}
+* **{{p}}**: {{v}}
+{% endfor %}
+
+{% endfor %}
+{% endfor %}
